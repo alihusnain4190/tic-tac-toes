@@ -1,6 +1,6 @@
 import React from "react";
-import { useState } from "react";
-const EditView = ({ updateData }) => {
+import { useState,  } from "react";
+const EditView = ({ updateData, cancelData }) => {
   const [data, setData] = useState("");
   const inputChange = (e) => {
     e.preventDefault();
@@ -16,6 +16,13 @@ const EditView = ({ updateData }) => {
           }}
         >
           Save
+        </button>
+        <button
+          onClick={() => {
+            cancelData();
+          }}
+        >
+          cancel
         </button>
       </section>
     </div>

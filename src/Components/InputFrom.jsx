@@ -11,9 +11,11 @@ const InputFrom = ({ DataList }) => {
     DataList(data);
   };
   return (
-    <section>
-      <input type="text" onChange={inputChange}></input>
-      <button onClick={handleData}>Add</button>
+    <section className="input__form">
+      <input className="input__text" type="text" onChange={inputChange}></input>
+      <button className="add__btn" onClick={handleData}>
+        Add
+      </button>
     </section>
   );
 };

@@ -2,9 +2,12 @@ import "./App.css";
 import InputForm from "./Components/InputFrom";
 import ListView from "./Components/ListView.jsx";
 import EditForm from "./Components/EditForm.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 function App() {
-  const [data, setData] = useState(["aqsa", "ijaz"]);
+  const [data, setData] = useState([
+    "The best preparation for tomorrow is doing your best today.",
+    "Live so that when your children think of fairness, caring, and integrity, they think of you.",
+  ]);
   const [edit, setEdit] = useState(false);
   const [indexNum, setIndexNum] = useState();
   const DataList = (val) => {
@@ -31,6 +34,9 @@ function App() {
     setEdit(false);
     setData(result);
   };
+  const cancelData = () => {
+    setEdit(false);
+  };
   if (!edit)
     return (
       <div className="App">
@@ -40,9 +46,9 @@ function App() {
     );
   else {
     return (
-      <div>
+      <div className="App">
         <InputForm />
-        <EditForm updateData={updateData} />
+        <EditForm updateData={updateData} cancelData={cancelData} />
       </div>
     );
   }
