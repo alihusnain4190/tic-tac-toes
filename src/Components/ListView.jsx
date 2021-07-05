@@ -7,7 +7,6 @@ const ListView = ({ data, delTask, editTask }) => {
           <button className="del__btn" onClick={() => delTask(i)}>
             del
           </button>
-
           <button className="edit__btn" onClick={() => editTask(i)}>
             edit
           </button>

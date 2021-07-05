@@ -1,5 +1,5 @@
 import React from "react";
-import { useState,  } from "react";
+import { useState } from "react";
 const EditView = ({ updateData, cancelData }) => {
   const [data, setData] = useState("");
   const inputChange = (e) => {
@@ -8,9 +8,14 @@ const EditView = ({ updateData, cancelData }) => {
   };
   return (
     <div>
-      <section>
-        <input type="text" onChange={inputChange}></input>
+      <section className="edit">
+        <input
+          className="edit__input"
+          type="text"
+          onChange={inputChange}
+        ></input>
         <button
+          className="edit__btn"
           onClick={() => {
             updateData(data);
           }}
@@ -18,6 +23,7 @@ const EditView = ({ updateData, cancelData }) => {
           Save
         </button>
         <button
+          className="del__btn"
           onClick={() => {
             cancelData();
           }}
